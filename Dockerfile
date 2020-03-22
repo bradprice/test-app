@@ -3,7 +3,7 @@ FROM centos:centos7
 ARG NGINX_VERSION="1.17.0"
 
 COPY nginx.repo /etc/yum.repos.d/nginx.repo
-COPY entrypoint.sh /entrypoint.sh
+COPY nginx.conf /etc/nginx/nginx.conf
 
 RUN yum install -y --setopt=tsflags=nodocs nginx-$NGINX_VERSION && \
     rm /etc/nginx/conf.d/default.conf && \
