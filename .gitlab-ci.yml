@@ -25,4 +25,3 @@ docker-build-master:
       - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
     except:
       - master
-  
