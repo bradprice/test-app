@@ -1,6 +1,6 @@
 FROM centos:7.7.1908
 
-ARG NGINX_VERSION="1.17.0"
+ARG NGINX_VERSION="1.17.9"
 
 COPY nginx.repo /etc/yum.repos.d/nginx.repo
 COPY nginx.conf /etc/nginx/nginx.conf
