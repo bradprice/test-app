@@ -2,13 +2,13 @@ version: '3.8'
 services:   
 
   test-app-alpine:
-    image: "${TEST-APP-ALPINE}"
+    image: "${TEST_APP_ALPINE_IMAGE}"
     build:
       context: .
       dockerfile: Dockerfile-alpine
 
   test-app-centos:
-    image: "${TEST-APP-CENTOS}"
+    image: "${TEST_APP_CENTOS_IMAGE}"
     build:
       context: .
       dockerfile: Dockerfile-centos
