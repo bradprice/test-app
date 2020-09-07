@@ -6,8 +6,8 @@ docker-build-master:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   variables:
-    TEST-APP-CENTOS: ${CI_REGISTRY_IMAGE}:centos
-    TEST-APP-ALPINE: ${CI_REGISTRY_IMAGE}:alpine
+    TEST_APP_CENTOS_IMAGE: ${CI_REGISTRY_IMAGE}:centos
+    TEST_APP_ALPINE_IMAGE: ${CI_REGISTRY_IMAGE}:alpine
   script:
     - docker-compose build --parallel
     - docker-compose push
@@ -22,8 +22,8 @@ docker-build:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   variables:
-    TEST-APP-CENTOS: ${CI_REGISTRY_IMAGE}:centos-${CI_COMMIT_REF_SLUG}
-    TEST-APP-ALPINE: ${CI_REGISTRY_IMAGE}:alpine-${CI_COMMIT_REF_SLUG}
+    TEST_APP_CENTOS_IMAGE: ${CI_REGISTRY_IMAGE}:centos-${CI_COMMIT_REF_SLUG}
+    TEST_APP_ALPINE_IMAGE: ${CI_REGISTRY_IMAGE}:alpine-${CI_COMMIT_REF_SLUG}
   script:
     - docker-compose build --parallel
     - docker-compose push
