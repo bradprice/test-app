@@ -4,7 +4,7 @@ This is a simple web app I use for testing.
 
 Start container
 ```bash
-docker run --rm -d -p 8080:80 bradprice/test-app
+docker run --rm -d -p 8080:8080 bradprice/test-app
 ```
 
 Test app
